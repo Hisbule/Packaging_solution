@@ -258,7 +258,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
                 </div>
                 <div className="flex flex-col">
                   <span className={`font-bold text-xl leading-none uppercase tracking-tight ${logoTextClass}`}>PMS</span>
-                  <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-pms-orange">Solutions</span>
+                  <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-pms-orange">Solution</span>
                 </div>
               </Link>
             </div>

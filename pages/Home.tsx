@@ -62,7 +62,7 @@ const Home: React.FC = () => {
                       Packaging
                   </span>
                   <span className={`block transition-all duration-1000 ease-out delay-300 ${isLoaded ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-20'}`}>
-                      Machinery <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-400">Solutions.</span>
+                      Machinery <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-400">Solution.</span>
                   </span>
                 </h1>
               </div>
