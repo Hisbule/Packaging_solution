@@ -17,13 +17,14 @@ const Home: React.FC = () => {
 
   return (
     <div className="flex flex-col w-full">
-      {/* 
-        Modern Hero Section 
-        Style: Full Screen, Bottom Aligned Text, Clean Typography
+{/* Modern Hero Section 
+        Mobile: Video at the top (natural aspect ratio), Text below.
+        Desktop: Full Screen video background, Text overlay at bottom.
       */}
-      <section className="relative h-screen w-full overflow-hidden">
-        {/* Background Video */}
-        <div className="absolute inset-0">
+      <section className="relative w-full flex flex-col md:block md:h-screen bg-pms-navy overflow-hidden">
+        
+        {/* Background Video Container */}
+        <div className="relative w-full aspect-video md:absolute md:inset-0">
            <video 
              autoPlay 
              muted 
@@ -33,7 +34,7 @@ const Home: React.FC = () => {
              poster={ASSETS.hero.poster}
            >
              <source src={ASSETS.hero.video} type="video/mp4" />
-             {/* Fallback image if video is not supported or missing */}
+             {/* Fallback image */}
              <img 
               src={ASSETS.hero.poster}
               alt="Modern Industrial Machinery" 
@@ -41,22 +42,22 @@ const Home: React.FC = () => {
              />
            </video>
            
-           {/* Gradient Overlay for Text Readability - Bottom Heavy */}
-           <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/40 to-black/10"></div>
+           {/* Gradient Overlay - Subtle on mobile, heavier at bottom on desktop */}
+           <div className="absolute inset-0 bg-black/20 md:bg-gradient-to-t md:from-black/95 md:via-black/40 md:to-black/10"></div>
         </div>
         
         {/* Content Container */}
-        <div className={`absolute inset-0 flex flex-col justify-end pb-20 md:pb-32 ${fluidPadding}`}>
-           <div className="w-full max-w-[1920px] mx-auto flex flex-col lg:flex-row justify-between items-end gap-8 md:gap-12">
+        <div className={`relative flex flex-col justify-center py-12 md:py-0 md:absolute md:inset-0 md:justify-end md:pb-32 ${fluidPadding}`}>
+           <div className="w-full max-w-[1920px] mx-auto flex flex-col lg:flex-row justify-between md:items-end gap-6 md:gap-12">
               
               {/* Left Side: Headline */}
-              <div className="w-full lg:w-2/3">
-                <p className={`text-pms-orange font-bold tracking-[0.2em] uppercase mb-4 text-sm md:text-base transition-all duration-1000 delay-500 ease-out ${isLoaded ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'}`}>
+              <div className="w-full lg:w-2/3 pt-4 md:pt-0">
+                <p className={`text-pms-orange font-bold tracking-[0.2em] uppercase mb-4 text-xs md:text-base transition-all duration-1000 delay-500 ease-out ${isLoaded ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'}`}>
                   Since 2002
                 </p>
                 
-                {/* Slide-in Animation Headline (From Left) */}
-                <h1 className="text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-white leading-[1.1] mb-6 lg:mb-0">
+                {/* Slide-in Animation Headline */}
+                <h1 className="text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-white leading-[1.1] mb-4 lg:mb-0">
                   <span className={`block transition-all duration-1000 ease-out delay-100 ${isLoaded ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-20'}`}>
                       Packaging
                   </span>
@@ -68,8 +69,7 @@ const Home: React.FC = () => {
 
               {/* Right Side: Description */}
               <div className="w-full lg:w-1/3 lg:pb-2">
-                {/* Slide-in Animation Description (From Right) - Left Aligned Text */}
-                <p className={`text-lg md:text-xl text-gray-300 leading-relaxed transition-all duration-1000 delay-700 ease-out lg:pl-8 text-left ${isLoaded ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-20'}`}>
+                <p className={`text-base md:text-xl text-gray-300 leading-relaxed transition-all duration-1000 delay-700 ease-out md:pl-8 text-left ${isLoaded ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-20'}`}>
                   Your trusted partner for high-performance Rotogravure, Flexo, and Lamination machinery. 
                   Delivering expert engineering services and reliable production solutions globally.
                 </p>
