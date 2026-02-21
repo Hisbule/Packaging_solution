@@ -17,18 +17,19 @@ const Home: React.FC = () => {
 
   return (
     <div className="flex flex-col w-full">
-{/* Modern Hero Section 
+      {/* 
+        Modern Hero Section 
         Style: Full Screen, Bottom Aligned Text, Clean Typography
       */}
-      <section className="relative h-screen w-full overflow-hidden bg-black">
+      <section className="relative h-screen w-full overflow-hidden">
         {/* Background Video */}
-        <div className="absolute inset-0 flex items-center justify-center">
+        <div className="absolute inset-0">
            <video 
              autoPlay 
              muted 
              loop 
              playsInline
-             className="w-full h-full object-contain md:object-cover"
+             className="w-full h-full object-cover"
              poster={ASSETS.hero.poster}
            >
              <source src={ASSETS.hero.video} type="video/mp4" />
@@ -36,7 +37,7 @@ const Home: React.FC = () => {
              <img 
               src={ASSETS.hero.poster}
               alt="Modern Industrial Machinery" 
-              className="w-full h-full object-contain md:object-cover" 
+              className="w-full h-full object-cover" 
              />
            </video>
            
